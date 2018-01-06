@@ -26,15 +26,15 @@ function quit(){
 var map = {65:false,68:false,74:false,76:false};
 var X = 50;
 var Y = 100;
-var object = [
-	{x:X,y:Y},
-	{x:X+50,y:Y},
-	{x:X+50,y:Y+50},
-	{x:X,y:Y+50}
-]
 
 function loop() {
 	window.setInterval(function () {
+		var object = [
+			{x:X,y:Y},
+			{x:X+50,y:Y},
+			{x:X+50,y:Y+50},
+			{x:X,y:Y+50}
+		]
 		if(map[68]==true){
 			X +=5;
 		}
@@ -42,7 +42,6 @@ function loop() {
 			X -=5;
 		}
 		for (i=0;i<object.length;i++){
-			console.log(object[i].x)
 			if(object[i].x<0){
 				x+=5;
 			}
