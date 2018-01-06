@@ -41,7 +41,8 @@ function loop() {
 		if(map[65]==true){
 			X -=5;
 		}
-		for (i=0;i<object.length+1;i++){
+		for (i=0;i<object.length;i++){
+			console.log(object[i].x)
 			if(object[i].x<0){
 				x+=5;
 			}
@@ -55,7 +56,7 @@ function loop() {
 				y-=5;
 			}
 		}
-		document.getElementById("test").style.left = x+"px";
+		document.getElementById("test").style.left = X+"px";
 	}, 100); 
 }
 
