@@ -24,7 +24,50 @@ body{
 	top: 300px;
 	background-color: gray;
 	border: 4px solid black;
+	display: block;
 }
 #start:active{
+	background-color: white;
+}
+#menu_button{
+	font-family: 'Press Start 2P', cursive;
+	width: 100px;
+	height: 25px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background-color: gray;
+	border: 4px solid black;
+	display: none;
+}
+#menu_button:active{
+	background-color: white;
+}
+#resume{
+	font-family: 'Press Start 2P', cursive;
+	width: 100px;
+	height: 25px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background-color: gray;
+	border: 4px solid black;
+	display: none;
+}
+#resume:active{
+	background-color: white;
+}
+#save{
+	font-family: 'Press Start 2P', cursive;
+	width: 100px;
+	height: 25px;
+	position: absolute;
+	left: 10px;
+	top: 45px;
+	background-color: gray;
+	border: 4px solid black;
+	display: none;
+}
+#save:active{
 	background-color: white;
 }
