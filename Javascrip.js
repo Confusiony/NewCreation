@@ -37,6 +37,19 @@ function settings(){
 		settings[i].style.display = "block";
 	}	
 }
+function exit(){
+	settings = document.getElementsByClassName("settings");
+	for(i=0;i<settings.length;i++){
+		console.log("hello");
+		console.log(settings[i]);
+		settings[i].style.display = "none";
+	}	
+	document.getElementById("resume").style.display="block";
+	document.getElementById("save").style.display="block";
+	document.getElementById("quit").style.display="block";
+	document.getElementById("settings").style.display="block";
+	document.getElementById("setting_buttons").style.display ="none";
+}
 
 
 function monolog(){
@@ -107,7 +120,7 @@ function fad_out(element){
 var sound = new Audio('songone.mp3');
 
 function onload(){
-	sound.volume = 0.001;
+	sound.volume = 0.01;
 	sound.play();
 }
  
