@@ -1,6 +1,7 @@
 function start(){
 	document.getElementById("start").style.display ="none";
 	document.getElementById("menu_button").style.display="block";
+	stop = false;
 	loop();
 }
 function menu(){
@@ -8,12 +9,14 @@ function menu(){
 	document.getElementById("resume").style.display="block";
 	document.getElementById("save").style.display="block";
 	document.getElementById("quit").style.display="block";
+	stop = true;
 }
 function resume(){
 	document.getElementById("menu_button").style.display="block";
 	document.getElementById("resume").style.display="none";
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
+	stop = false;
 }
 function quit(){
 	document.getElementById("menu_button").style.display="none";
@@ -26,6 +29,7 @@ function quit(){
 var map = {65:false,68:false,87:false,83:false};
 var X = 50;
 var Y = 100;
+var stop = false;
 var object = [
 	{x:X,y:Y},
 	{x:X+50,y:Y},
@@ -34,7 +38,8 @@ var object = [
 ]
 
 function loop() {
-	window.setInterval(function () {
+	window.setInterval( function () {
+	if(stop==false){
 		if(map[68]==true){
 			X +=5;
 		}
@@ -69,6 +74,7 @@ function loop() {
 		}
 		document.getElementById("test").style.left = X+"px";
 		document.getElementById("test").style.top = Y+"px";
+	}
 	}, 100); 
 }
 
