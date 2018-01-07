@@ -3,6 +3,7 @@ function menu(){
 	document.getElementById("resume").style.display="block";
 	document.getElementById("save").style.display="block";
 	document.getElementById("quit").style.display="block";
+	document.getElementById("settings").style.display="block";
 	stop = true;
 }
 function resume(){
@@ -10,6 +11,7 @@ function resume(){
 	document.getElementById("resume").style.display="none";
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
+	document.getElementById("settings").style.display="none";
 	stop = false;
 	loop();
 }
@@ -21,6 +23,21 @@ function quit(){
 	document.getElementById("start").style.display ="block";
 	stop = true;
 }
+function settings(){
+	document.getElementById("resume").style.display="none";
+	document.getElementById("save").style.display="none";
+	document.getElementById("quit").style.display="none";
+	document.getElementById("settings").style.display="none";
+	document.getElementById("setting_buttons").style.display ="block";
+	settings = document.getElementsByClassName("settings");
+	console.log(settings);
+	for(i=0;i<settings.length;i++){
+		console.log("hello");
+		console.log(settings[i]);
+		settings[i].style.display = "block";
+	}	
+}
+
 
 function monolog(){
 	document.getElementById("start").style.display ="none";
@@ -37,7 +54,6 @@ function monolog(){
 			}
 		}
 		if(interval<=4 &&interval>2){
-			console.log("hello");
 			document.getElementById("mono").innerHTML = "We seem to be in a bit of a pickle";
 			if (interval==3){
 				fad_in(document.getElementById("mono"));
@@ -47,7 +63,6 @@ function monolog(){
 			}
 		}
 		if(interval<=6 &&interval>4){
-			console.log("hello");
 			document.getElementById("mono").innerHTML = "but frist tea.";
 			if (interval==5){
 				fad_in(document.getElementById("mono"));
@@ -89,9 +104,26 @@ function fad_out(element){
     }, 100);
 }
 
+var sound = new Audio('songone.mp3');
+
 function onload(){
-	var audio = new Audio('songone.mp3');
-	audio.play();
+	sound.volume = 0.001;
+	sound.play();
+}
+ 
+var volume = 0.001;
+var mute_toggel = false;
+function toggel_mute(){
+	mute_toggel = !mute_toggel;
+	if(mute_toggel==false){
+		sound.volume = 0;
+		document.getElementById("mute").innerHTML="Unmute";
+	}
+	if(mute_toggel==true){
+		sound.volume = volume;
+		document.getElementById("mute").innerHTML="Mute";
+	}
+	
 }
 
 
