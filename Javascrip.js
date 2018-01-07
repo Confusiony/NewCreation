@@ -23,39 +23,52 @@ function quit(){
 	document.getElementById("start").style.display ="block";
 }
 
-var map = {65:false,68:false,74:false,76:false};
+var map = {65:false,68:false,87:false,83:false};
 var X = 50;
 var Y = 100;
+var object = [
+	{x:X,y:Y},
+	{x:X+50,y:Y},
+	{x:X+50,y:Y+50},
+	{x:X,y:Y+50}
+]
 
 function loop() {
 	window.setInterval(function () {
-		var object = [
-			{x:X,y:Y},
-			{x:X+50,y:Y},
-			{x:X+50,y:Y+50},
-			{x:X,y:Y+50}
-		]
 		if(map[68]==true){
 			X +=5;
 		}
 		if(map[65]==true){
 			X -=5;
 		}
+		if(map[87]==true){
+			Y-=5;
+		}
+		if(map[83]==true){
+			Y+=5;
+		}
+		object = [
+			{x:X,y:Y},
+			{x:X+50,y:Y},
+			{x:X+50,y:Y+50},
+			{x:X,y:Y+50}
+		]
 		for (i=0;i<object.length;i++){
 			if(object[i].x<0){
-				x+=5;
+				X+=(object[i].x*-1)/2;
 			}
 			if(object[i].x>1000){
-				x-=5;
+				X-=(object[i].x-1000)/2;
 			}
 			if(object[i].y<0){
-				y+=5;
+				Y+=(object[i].y*-1)/2;
 			}
 			if(object[i].y>600){
-				y-=5;
+				Y-=(object[i].y-600)/2;
 			}
 		}
 		document.getElementById("test").style.left = X+"px";
+		document.getElementById("test").style.top = Y+"px";
 	}, 100); 
 }
 
@@ -63,7 +76,7 @@ function loop() {
 // https://stackoverflow.com/questions/13640061/get-a-list-of-all-currently-pressed-keys-in-javascript?noredirect=1&lq=1 //
 //this will check if any keys are down or up and with the list i crate called map it will change the false to a true if that key is down
 document.addEventListener('keydown',function(event){
-map[event.keyCode] = true;
+	map[event.keyCode] = true;
 },
 false);
 document.addEventListener('keyup',function(event){
