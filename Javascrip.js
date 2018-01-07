@@ -11,6 +11,7 @@ function resume(){
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
 	stop = false;
+	loop();
 }
 function quit(){
 	document.getElementById("menu_button").style.display="none";
@@ -18,6 +19,7 @@ function quit(){
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
 	document.getElementById("start").style.display ="block";
+	stop = true;
 }
 
 function monolog(){
@@ -26,7 +28,7 @@ function monolog(){
 	timer = setInterval(function() {
 		interval+=1;
 		if (interval<=2){
-			document.getElementById("mono").innerHTML = "Greetings";
+			document.getElementById("mono").innerHTML = "Greetings.";
 			if (interval==1){
 				fad_in(document.getElementById("mono"));
 			}
@@ -46,7 +48,7 @@ function monolog(){
 		}
 		if(interval<=6 &&interval>4){
 			console.log("hello");
-			document.getElementById("mono").innerHTML = "but frist tea";
+			document.getElementById("mono").innerHTML = "but frist tea.";
 			if (interval==5){
 				fad_in(document.getElementById("mono"));
 			}
@@ -99,8 +101,10 @@ var object = [
 ]
 
 function loop() {
-	window.setInterval( function () {
-	if(stop==false){
+	Main_loop = window.setInterval( function () {
+		if(stop==true){
+			clearInterval(Main_loop);
+		}
 		if(map[68]==true){
 			X +=5;
 		}
@@ -135,7 +139,6 @@ function loop() {
 		}
 		document.getElementById("test").style.left = X+"px";
 		document.getElementById("test").style.top = Y+"px";
-	}
 	}, 100); 
 }
 
