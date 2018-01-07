@@ -118,10 +118,14 @@ function fad_out(element){
 }
 
 var sound = new Audio('songone.mp3');
-
 function onload(){
 	sound.volume = 0.01;
 	sound.play();
+}
+
+var click = new Audio('click.mp3');
+function PlaySound(){
+    click.play();
 }
  
 var volume = 0.001;
