@@ -97,3 +97,12 @@ body{
 	left: 100px;
 	top: 100px;
 }
+#mono{
+	text-align: center;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 300px;
+	opacity: 0;
+}

@@ -1,9 +1,3 @@
-function start(){
-	document.getElementById("start").style.display ="none";
-	document.getElementById("menu_button").style.display="block";
-	stop = false;
-	loop();
-}
 function menu(){
 	document.getElementById("menu_button").style.display="none";
 	document.getElementById("resume").style.display="block";
@@ -24,6 +18,73 @@ function quit(){
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
 	document.getElementById("start").style.display ="block";
+}
+
+function monolog(){
+	document.getElementById("start").style.display ="none";
+	var interval = 0;
+	timer = setInterval(function() {
+		interval+=1;
+		if (interval<=2){
+			document.getElementById("mono").innerHTML = "Greetings";
+			if (interval==1){
+				fad_in(document.getElementById("mono"));
+			}
+			if(interval==2){
+				fad_out(document.getElementById("mono"));
+			}
+		}
+		if(interval<=4 &&interval>2){
+			console.log("hello");
+			document.getElementById("mono").innerHTML = "We seem to be in a bit of a pickle";
+			if (interval==3){
+				fad_in(document.getElementById("mono"));
+			}
+			if(interval==4){
+				fad_out(document.getElementById("mono"));
+			}
+		}
+		if(interval<=6 &&interval>4){
+			console.log("hello");
+			document.getElementById("mono").innerHTML = "but frist tea";
+			if (interval==5){
+				fad_in(document.getElementById("mono"));
+			}
+			if(interval==6){
+				fad_out(document.getElementById("mono"));
+			}
+		}
+		if(interval>6){
+			clearInterval(timer);
+			loop();
+			stop = false;
+			document.getElementById("menu_button").style.display="block";
+		}
+	},2000);
+}
+
+function fad_in(element){
+	var op = 0.1;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        op+= 0.1;
+    }, 100);
+}
+
+function fad_out(element){
+	var op = 0.9;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op <= 0){
+            clearInterval(timer);
+        }
+		element.style.opacity = op;
+        op -= 0.1;
+    }, 100);
 }
 
 var map = {65:false,68:false,87:false,83:false};
