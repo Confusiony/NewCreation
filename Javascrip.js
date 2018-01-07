@@ -89,6 +89,12 @@ function fad_out(element){
     }, 100);
 }
 
+function onload(){
+	var audio = new Audio('songone.mp3');
+	audio.play();
+}
+
+
 var map = {65:false,68:false,87:false,83:false};
 var X = 50;
 var Y = 100;
