@@ -32,16 +32,12 @@ function settings(){
 	settings = document.getElementsByClassName("settings");
 	console.log(settings);
 	for(i=0;i<settings.length;i++){
-		console.log("hello");
-		console.log(settings[i]);
 		settings[i].style.display = "block";
 	}	
 }
 function exit(){
 	settings = document.getElementsByClassName("settings");
 	for(i=0;i<settings.length;i++){
-		console.log("hello");
-		console.log(settings[i]);
 		settings[i].style.display = "none";
 	}	
 	document.getElementById("resume").style.display="block";
@@ -136,6 +132,7 @@ function PlaySound() {
 }
 
 var volume = 0.01;
+document.getElementById("bar").style.width= (volume*1000)*2+"px";
 var mute_toggel = false;
 function toggel_mute(){
 	mute_toggel = !mute_toggel;
@@ -148,6 +145,21 @@ function toggel_mute(){
 		document.getElementById("mute").innerHTML="Mute";
 	}
 	
+}
+function minus_volume(){
+	if(volume>0){
+		volume-=0.01;
+		sound.volume = volume;
+	}
+	document.getElementById("bar").style.width= (volume*1000)*2+"px";
+}
+function plus_volume(){
+	if(volume<0.0998){
+		volume+=0.01;
+		sound.volume = volume;
+	}
+	document.getElementById("bar").style.width= (volume*1000)*2+"px";
+	console.log(volume);
 }
 
 

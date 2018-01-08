@@ -14,9 +14,11 @@
 				<div id="setting_buttons">
 					<button type="button" class="settings" id="mute" onclick="toggel_mute() + PlaySound()">Mute</button>
 					<button type="button" class="settings" id="exit" onclick="exit() + PlaySound()">Exit</button>
-					<div id="volume_bar"></div>
-					<button type="button" class="settings" id="plus_volume">+</button>
-					<button type="button" class="settings" id="minus_volume">-</button>
+					<div id="volume_bar">
+						<div id="bar"></div>
+					</div>
+					<button type="button" class="settings" id="plus_volume" onclick="minus_volume()+PlaySound()">-</button>
+					<button type="button" class="settings" id="minus_volume" onclick="plus_volume()+PlaySound()">+</button>
 				</div>				
 				<button type="button" id="save" onclick="PlaySound()">Save</button>
 				<button type="button" id="quit" onclick="quit() + PlaySound()">Quit</button>
