@@ -21,6 +21,7 @@ function quit(){
 	document.getElementById("save").style.display="none";
 	document.getElementById("quit").style.display="none";
 	document.getElementById("start").style.display ="block";
+	document.getElementById("settings").style.display="none";
 	stop = true;
 }
 function settings(){
@@ -117,6 +118,9 @@ var sound = new Audio('songone.mp3');
 function onload(){
 	sound.volume = 0.01;
 	sound.play();
+	var Main_audio = setInterval(function(){
+		sound.currentTime = 0;
+	},386400)
 }
 
 var click = new Audio();
