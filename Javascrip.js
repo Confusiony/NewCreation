@@ -96,9 +96,9 @@ function monolog(){
 function fad_in(element){
 	var op = 0.1;  // initial opacity
     element.style.display = 'block';
-    var timer = setInterval(function () {
+    var fad_in_Interval = setInterval(function () {
         if (op >= 1){
-            clearInterval(timer);
+            clearInterval(fad_in_Interval);
         }
         element.style.opacity = op;
         op+= 0.1;
@@ -108,9 +108,9 @@ function fad_in(element){
 function fad_out(element){
 	var op = 0.9;  // initial opacity
     element.style.display = 'block';
-    var timer = setInterval(function () {
+    var fad_out_Interval = setInterval(function () {
         if (op <= 0){
-            clearInterval(timer);
+            clearInterval(fad_out_Interval);
         }
 		element.style.opacity = op;
         op -= 0.1;
@@ -126,10 +126,16 @@ function onload(){
 var click = new Audio();
 click.src = "click.mp3";
 function PlaySound() {
+	click.currentTime=0.1;
     click.play();
+	sound_interval = setInterval(function(){
+		click.pause();
+		click.currentTime=100;
+		clearInterval(sound_interval);
+	},150)
 }
 
-var volume = 0.001;
+var volume = 0.01;
 var mute_toggel = false;
 function toggel_mute(){
 	mute_toggel = !mute_toggel;
