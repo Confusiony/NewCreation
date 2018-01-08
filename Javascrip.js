@@ -123,6 +123,7 @@ var click = new Audio();
 click.src = "click.mp3";
 function PlaySound() {
 	click.currentTime=0.1;
+	click.volume = 0.01;
     click.play();
 	sound_interval = setInterval(function(){
 		click.pause();
