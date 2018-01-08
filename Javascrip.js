@@ -128,7 +128,7 @@ function PlaySound() {
 		click.pause();
 		click.currentTime=100;
 		clearInterval(sound_interval);
-	},150)
+	},1500)
 }
 
 var volume = 0.01;
