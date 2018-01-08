@@ -123,11 +123,12 @@ function onload(){
 	sound.play();
 }
 
-var click = new Audio('click.mp3');
-function PlaySound(){
+var click = new Audio();
+click.src = "click.mp3";
+function PlaySound() {
     click.play();
 }
- 
+
 var volume = 0.001;
 var mute_toggel = false;
 function toggel_mute(){
