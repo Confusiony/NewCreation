@@ -6,20 +6,20 @@
 	</head>
 	<body onload="onload()">
 		<div id="Window">
-			<button type="button" id="start" onclick="monolog()">Start</button>
+			<button type="button" id="start" onclick="monolog() + PlaySound()">Start</button>
 			<div id="menu">
-				<button type="button" id="menu_button" onclick="menu()">Menu</button>
-				<button type="button" id="resume" onclick="resume()">Resume</button>
-				<button type="button" id="settings" onclick="settings()">Setting</button>
+				<button type="button" id="menu_button" onclick="menu() + PlaySound()">Menu</button>
+				<button type="button" id="resume" onclick="resume() + PlaySound()">Resume</button>
+				<button type="button" id="settings" onclick="settings() + PlaySound()">Setting</button>
 				<div id="setting_buttons">
-					<button type="button" class="settings" id="mute" onclick="toggel_mute()">Mute</button>
-					<button type="button" class="settings" id="exit" onclick="exit()">Exit</button>
-					<button type="button" class="settings" id="plus_volume">+</button>
+					<button type="button" class="settings" id="mute" onclick="toggel_mute() + PlaySound()">Mute</button>
+					<button type="button" class="settings" id="exit" onclick="exit() + PlaySound()">Exit</button>
+					<button type="button" class="settings" id="plus_volume + PlaySound()">+</button>
 					<div id="volume_bar"></div>
-					<button type="button" class="settings" id="minus_volume">-</button>
+					<button type="button" class="settings" id="minus_volume + PlaySound()">-</button>
 				</div>				
-				<button type="button" id="save">Save</button>
-				<button type="button" id="quit" onclick="quit()">Quit</button>
+				<button type="button" id="save" onclick="save() + PlaySound()">Save</button>
+				<button type="button" id="quit" onclick="quit() + PlaySound()">Quit</button>
 			</div>
 			<p id="mono">Greetings</p>
 			<img src="library/trash/button.png" id="test">
@@ -27,3 +27,4 @@
 		<script src="Javascrip.js"></script>
 	</body>
 </html>
+
