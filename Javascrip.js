@@ -72,7 +72,7 @@ function monolog(){
 			}
 		}
 		if(interval<=6 &&interval>4){
-			document.getElementById("mono").innerHTML = "but frist tea.";
+			document.getElementById("mono").innerHTML = "but first, tea.";
 			if (interval==5){
 				fad_in(document.getElementById("mono"));
 			}
