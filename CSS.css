@@ -4,6 +4,7 @@ body{
 #Window{
 	overflow: hidden;
 	background-color: gray;
+	background-image: url("sceneone.png");
 	border: 4px solid black;
 	width: 1000px;
 	height: 600px;
@@ -205,5 +206,6 @@ body{
 	left: 0;
 	right: 0;
 	top: 300px;
+	color: red;
 	opacity: 0;
 }
