@@ -47,6 +47,7 @@ function exit(){
 	document.getElementById("setting_buttons").style.display ="none";
 }
 
+var cookie = document.cookie;
 
 function monolog(){
 	document.getElementById("start").style.display ="none";
