@@ -55,7 +55,7 @@ function monolog(){
 	timer = setInterval(function() {
 		interval+=1;
 		if (interval<=2){
-			document.getElementById("mono").innerHTML = "Greetings.";
+			document.getElementById("mono").innerHTML = "Shalom.";
 			if (interval==1){
 				fad_in(document.getElementById("mono"));
 			}
@@ -64,7 +64,7 @@ function monolog(){
 			}
 		}
 		if(interval<=4 &&interval>2){
-			document.getElementById("mono").innerHTML = "We seem to be in a bit of a pickle";
+			document.getElementById("mono").innerHTML = "We seem to be in a perplexing forest.";
 			if (interval==3){
 				fad_in(document.getElementById("mono"));
 			}
@@ -73,7 +73,7 @@ function monolog(){
 			}
 		}
 		if(interval<=6 &&interval>4){
-			document.getElementById("mono").innerHTML = "but first, tea.";
+			document.getElementById("mono").innerHTML = "I wonder how we got here...";
 			if (interval==5){
 				fad_in(document.getElementById("mono"));
 			}
@@ -103,15 +103,15 @@ function fad_in(element){
 }
 
 function fad_out(element){
-	var op = 0.9;  // initial opacity
+	var op = 0.5;  // initial opacity
     element.style.display = 'block';
     var fad_out_Interval = setInterval(function () {
         if (op <= 0){
             clearInterval(fad_out_Interval);
         }
 		element.style.opacity = op;
-        op -= 0.1;
-    }, 100);
+        op -= 0.15;
+    }, 150);
 }
 
 var sound = new Audio('songone.mp3');
