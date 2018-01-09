@@ -171,6 +171,9 @@ function plus_volume(){
 	document.getElementById("bar").style.width= (volume*1000)*2+"px";
 }
 
+function setUp(){
+
+}
 
 var map = {65:false,68:false,87:false,83:false};
 var X = 50;
@@ -184,6 +187,7 @@ var object = [
 ]
 
 function loop() {
+	document.getElementById("Window").style.backgroundImage = "none";
 	Main_loop = window.setInterval( function () {
 		if(stop==true){
 			clearInterval(Main_loop);
