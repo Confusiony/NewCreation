@@ -64,7 +64,7 @@ function monolog(){
 			}
 		}
 		if(interval<=4 &&interval>2){
-			document.getElementById("mono").innerHTML = "I seem to be in a ominous entrance.";
+			document.getElementById("mono").innerHTML = "I seem to be by a ominous entrance.";
 			if (interval==3){
 				fad_in(document.getElementById("mono"));
 			}
