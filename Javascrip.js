@@ -31,7 +31,6 @@ function settings(){
 	document.getElementById("settings").style.display="none";
 	document.getElementById("setting_buttons").style.display ="block";
 	settings = document.getElementsByClassName("settings");
-	console.log(settings);
 	for(i=0;i<settings.length;i++){
 		settings[i].style.display = "block";
 	}	
@@ -143,6 +142,7 @@ function PlaySound() {
 var volume = 0.01;
 document.getElementById("bar").style.width= (volume*1000)*2+"px";
 var mute_toggel = false;
+toggel_mute();
 function toggel_mute(){
 	mute_toggel = !mute_toggel;
 	if(mute_toggel==false){
@@ -168,7 +168,6 @@ function plus_volume(){
 		sound.volume = volume;
 	}
 	document.getElementById("bar").style.width= (volume*1000)*2+"px";
-	console.log(volume);
 }
 
 
