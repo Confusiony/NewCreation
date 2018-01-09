@@ -54,7 +54,7 @@ function monolog(){
 	timer = setInterval(function() {
 		interval+=1;
 		if (interval<=2){
-			document.getElementById("mono").innerHTML = "Shalom.";
+			document.getElementById("mono").innerHTML = "Ummm.";
 			if (interval==1){
 				fad_in(document.getElementById("mono"));
 			}
@@ -63,7 +63,7 @@ function monolog(){
 			}
 		}
 		if(interval<=4 &&interval>2){
-			document.getElementById("mono").innerHTML = "We seem to be in a perplexing forest.";
+			document.getElementById("mono").innerHTML = "I seem to be in a ominous entrance.";
 			if (interval==3){
 				fad_in(document.getElementById("mono"));
 			}
@@ -72,7 +72,7 @@ function monolog(){
 			}
 		}
 		if(interval<=6 &&interval>4){
-			document.getElementById("mono").innerHTML = "I wonder how we got here...";
+			document.getElementById("mono").innerHTML = "So of course i'll go in.";
 			if (interval==5){
 				fad_in(document.getElementById("mono"));
 			}

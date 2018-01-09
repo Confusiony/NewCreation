@@ -4,7 +4,7 @@ body{
 #Window{
 	overflow: hidden;
 	background-color: gray;
-	background-image: url("sceneone.png");
+	background-image: url("library/background/background.jpg");
 	border: 4px solid black;
 	width: 1000px;
 	height: 600px;
@@ -33,7 +33,7 @@ body{
 }
 #menu_button{
 	font-family: 'Press Start 2P', cursive;
-	width: 100px;
+	width: 120px;
 	height: 25px;
 	position: absolute;
 	left: 10px;
@@ -48,7 +48,7 @@ body{
 }
 #resume{
 	font-family: 'Press Start 2P', cursive;
-	width: 100px;
+	width: 120px;
 	height: 25px;
 	position: absolute;
 	left: 10px;
@@ -63,7 +63,7 @@ body{
 }
 #save{
 	font-family: 'Press Start 2P', cursive;
-	width: 100px;
+	width: 120px;
 	height: 25px;
 	position: absolute;
 	left: 10px;
@@ -78,7 +78,7 @@ body{
 }
 #settings{
 	font-family: 'Press Start 2P', cursive;
-	width: 100px;
+	width: 120px;
 	height: 25px;
 	position: absolute;
 	left: 10px;
@@ -93,7 +93,7 @@ body{
 }
 #quit{
 	font-family: 'Press Start 2P', cursive;
-	width: 100px;
+	width: 120px;
 	height: 25px;
 	position: absolute;
 	left: 10px;
