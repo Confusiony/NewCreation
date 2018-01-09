@@ -114,7 +114,7 @@ function fad_out(element){
     }, 150);
 }
 
-var sound = new Audio('songone.mp3');
+var sound = new Audio('library/sound/songone.mp3');
 function onload(){
 	sound.volume = 0.01;
 	sound.play();
@@ -123,17 +123,21 @@ function onload(){
 	},386400)
 }
 
-var click = new Audio();
-click.src = "click.mp3";
+var click = new Audio('library/sound/click.mp3');
+var clicked = false;
 function PlaySound() {
-	click.currentTime=0.1;
-	click.volume = 0.01;
+	if(clicked==true){
+		clearInterval(sound_interval);
+	}
+	click.currentTime=0;
+	click.volume = 0.1;
     click.play();
 	sound_interval = setInterval(function(){
 		click.pause();
-		click.currentTime=100;
+		click.currentTime=0;
 		clearInterval(sound_interval);
-	},1500)
+		clicked = true;
+	},300)
 }
 
 var volume = 0.01;
