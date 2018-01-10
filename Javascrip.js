@@ -184,27 +184,39 @@ function setUp(){
 
 //level create
 
+var classes = "floor_plain";
+var health = false;
 function floor_create(){
 	var position = 0;
-	var url_link = "plain_corridor";
 	var random = Math.floor((Math.random() * 2) + 1)
-	switch (random){
-		case random<1.5:
-			url_link = "plain_corridor";
-			break;
-		case random>1.5:
-			url_link = "collum_corridor";
-			break;
+	if(random<1.5){
+		classes = "floor_plain";
+		health = true;
 	}
-	console.log(url_link);	
+	else if(random>1.5){
+		classes = "floor_corridor";
+		health = false;
+	}
 	for(i=0;i<5;i++){
-		console.log("yep");
 		var floor = document.createElement('div');
-		floor.style.backgroundImage = 'url(library/assest/'+url_link+'.png)';
+		floor.setAttribute('class', classes);
+		floor.setAttribute('id','floor');
 		floor.style.left = position+"px";
-		floor.setAttribute('class', 'floor');
 		document.getElementById("Window").appendChild(floor);
 		position+=200;
+	}
+	if(health==true){
+		var floor = document.createElement('div');
+		floor.setAttribute('id','health');
+		floor.style.left = Math.floor((Math.random() * 0) + 800)+"px";
+		document.getElementById("Window").appendChild(floor);
+	}
+}
+
+function floor_remove(){
+	for(i=0;i<5;i++){
+		var div = document.getElementById('floor');
+		div.parentNode.removeChild(div);
 	}
 }
 

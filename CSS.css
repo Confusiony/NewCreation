@@ -209,11 +209,30 @@ body{
 	color: red;
 	opacity: 0;
 }
-.floor{
+.floor_plain{
 	position: absolute;
 	top:300px;
 	width:200px;
 	height: 200px;
+	background-image: url(library/assest/plain_corridor.png);
 	background-size: 100% 100%;
 	z-index: 50;
+}
+.floor_corridor{
+	position: absolute;
+	top:270px;
+	width:200px;
+	height: 230px;
+	background-image: url(library/assest/collum_corridor.png);
+	background-size: 100% 100%;
+	z-index: 50;
+}
+#health{
+	position: absolute;
+	top:285px;
+	width: 40px;
+	height:90px;
+	background-image: url(library/assest/health_wall.png);
+	background-size: 100% 100%;
+	z-index: 60;
 }
