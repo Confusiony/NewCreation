@@ -1,3 +1,4 @@
+//Button setup
 function menu(){
 	document.getElementById("menu_button").style.display="none";
 	document.getElementById("resume").style.display="block";
@@ -48,7 +49,7 @@ function exit(){
 }
 
 var cookie = document.cookie;
-
+//intro
 function monolog(){
 	document.getElementById("start").style.display ="none";
 	var interval = 0;
@@ -83,7 +84,7 @@ function monolog(){
 		}
 		if(interval>6){
 			clearInterval(timer);
-			loop();
+			setUp();
 			stop = false;
 			document.getElementById("menu_button").style.display="block";
 		}
@@ -114,6 +115,8 @@ function fad_out(element){
     }, 150);
 }
 
+
+//sound
 var sound = new Audio('library/sound/songone.mp3');
 function onload(){
 	sound.volume = 0.01;
@@ -171,10 +174,42 @@ function plus_volume(){
 	document.getElementById("bar").style.width= (volume*1000)*2+"px";
 }
 
+
+//setup
 function setUp(){
 
 }
 
+
+
+//level create
+
+function floor_create(){
+	var position = 0;
+	var url_link = "plain_corridor";
+	var random = Math.floor((Math.random() * 2) + 1)
+	switch (random){
+		case random<1.5:
+			url_link = "plain_corridor";
+			break;
+		case random>1.5:
+			url_link = "collum_corridor";
+			break;
+	}
+	console.log(url_link);	
+	for(i=0;i<5;i++){
+		console.log("yep");
+		var floor = document.createElement('div');
+		floor.style.backgroundImage = 'url(library/assest/'+url_link+'.png)';
+		floor.style.left = position+"px";
+		floor.setAttribute('class', 'floor');
+		document.getElementById("Window").appendChild(floor);
+		position+=200;
+	}
+}
+
+
+//main
 var map = {65:false,68:false,87:false,83:false};
 var X = 50;
 var Y = 100;
