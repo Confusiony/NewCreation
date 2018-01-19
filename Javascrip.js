@@ -81,6 +81,7 @@ function monolog(){
 			if(interval==6){
 				fad_out(document.getElementById("mono"));
 			}
+			//// Hmm its too quiet in here. I hope there isn't any deadly monsters waiting to ambush me... oh for fucc
 		}
 		if(interval>6){
 			clearInterval(timer);
